@@ -117,6 +117,7 @@ def sum_more_cosines(m, n):
 
     return total
 
+
 def run_test_count_sines_from():
     """ Tests the   count_sines_from   function. """
     # ------------------------------------------------------------------
@@ -206,7 +207,7 @@ def count_sines_from(m, n):
     # ------------------------------------------------------------------
 
     count = 0
-    for k in range (n-m+1):
+    for k in range(n-m+1):
         c = math.sin(m)
         m = m+1
         if c < 0.5:
