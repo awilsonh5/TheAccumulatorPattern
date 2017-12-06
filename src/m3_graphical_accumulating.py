@@ -172,6 +172,17 @@ def draw_lines(n, point, window):
       :type point: rg.Point
       :type window: rg.RoseWindow
     """
+
+    y = point.y + 100
+    x = point.x + 100
+    for k in range(n):
+        end = rg.Point(x, y)
+        line = rg.Line(point, end)
+        line.attach_to(window)
+        y = y - (201 / n)
+
+    window.render()
+
     # ------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #          Tests have been written for you (above).
