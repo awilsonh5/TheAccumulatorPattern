@@ -179,12 +179,12 @@ def draw_lines(n, point, window):
         end = rg.Point(x, y)
         line = rg.Line(point, end)
         line.attach_to(window)
-        y = y - (201 / n)
+        y = y - (200 / (n-1))
 
     window.render()
 
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
