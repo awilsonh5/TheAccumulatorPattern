@@ -131,7 +131,7 @@ def run_test_draw_circles_from_rectangle():
     print('--------------------------------------------------')
 
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  draw_circles_from_rectangle  function
     #   defined below.  Include at least **   3   ** tests, of which
     #      ***  at least TWO tests are on ONE window and
@@ -184,6 +184,7 @@ def run_test_draw_circles_from_rectangle():
     draw_circles_from_rectangle(6, 10, rectangle, window2)
 
     window2.close_on_mouse_click()
+
 
 def draw_circles_from_rectangle(m, n, rectangle, window):
     """
@@ -245,8 +246,9 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
         circle2.attach_to(window)
         y = y - (2*radius2)
     window.render()
+
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -337,8 +339,33 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
       :type n: int
       :type window: rg.RoseWindow
       """
+    rectangle1.attach_to(window)
+    rectangle2.attach_to(window)
+    center1 = rectangle1.get_center()
+    center2 = rectangle2.get_center()
+    p1 = center1
+    p2 = center2
+    x1 = center1.x
+    x2 = center2.x
+    y1 = center1.y
+    y2 = center2.y
+    for k in range(n):
+        line = rg.Line(p1, p2)
+        if k % 2 == 0:
+            line.color = rectangle1.outline_color
+        else:
+            line.color = rectangle2.outline_color
+        line.attach_to(window)
+        y1 = y1 + (rectangle1.get_height()/2)
+        y2 = y2 + (rectangle1.get_height()/2)
+        x1 = x1 - (rectangle1.get_width()/2)
+        x2 = x2 - (rectangle1.get_width()/2)
+        p1 = rg.Point(x1, y1)
+        p2 = rg.Point(x2, y2)
+    window.render()
+
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
